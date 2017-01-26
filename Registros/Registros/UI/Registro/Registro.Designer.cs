@@ -119,6 +119,7 @@
             this.claveTextBox.Name = "claveTextBox";
             this.claveTextBox.Size = new System.Drawing.Size(100, 20);
             this.claveTextBox.TabIndex = 6;
+            this.claveTextBox.Text = "Constraseña ";
             // 
             // button1
             // 
