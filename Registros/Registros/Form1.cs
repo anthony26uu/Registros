@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Registros
 {
-    public partial class Peliculas : Form
+    public partial class Form1 : Form
     {
-        public Peliculas()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -34,9 +34,8 @@ namespace Registros
 
         private void button2_Click(object sender, EventArgs e)
         {
-       //     UI.Registro.Registro registrar = new UI.Registro.Registro();
+      
             UI.Registro.TipoRegistro registrar = new UI.Registro.TipoRegistro();
-
             registrar.Show();
         }
     }

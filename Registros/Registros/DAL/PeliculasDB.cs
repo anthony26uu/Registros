@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Registros.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Registros.DAL
 {
   public  class PeliculasDB: DbContext
     {
-        public PeliculasDB(): base("ConStr1")
+        public PeliculasDB(): base("ConStr")
         {
 
         }

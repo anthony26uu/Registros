@@ -34,21 +34,18 @@ namespace Registros.UI.Registro
         private void button1_Click(object sender, EventArgs e)
         {
             DAL.PeliculasDB db = new DAL.PeliculasDB();
+   
             Entidades.Peliculas pelicula = new Entidades.Peliculas();
-
           
 
 
-            pelicula.Nombres = nombresTextBox.Text;
-            pelicula.Estreno = estrenoMaskedTextBox.Text;
-            pelicula.Categoria = categoriaTextBox.Text;
-            pelicula.Descripcion = descripcionTextBox.Text;
+          pelicula.Nombres = nombresTextBox.Text;
+           pelicula.Estreno = estrenoMaskedTextBox.Text;
+         pelicula.Categoria = categoriaTextBox.Text;
+        pelicula.Descripcion = descripcionTextBox.Text;
 
 
-        //    db.Peliculas.Add(pelicula);
-          
-
-          
+            db.Peliculas.Add(pelicula);
             db.SaveChanges();
 
             //Limpia al final de registtrar usuario

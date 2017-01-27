@@ -162,7 +162,6 @@
       <DependentUpon>TipoRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="PeliculasDBDataSet.xsc">
       <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>

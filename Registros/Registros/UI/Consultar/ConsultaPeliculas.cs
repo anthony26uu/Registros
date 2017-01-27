@@ -1,4 +1,5 @@
 ﻿using Registros.DAL;
+using Registros.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
