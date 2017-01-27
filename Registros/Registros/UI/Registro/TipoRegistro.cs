@@ -31,5 +31,12 @@ namespace Registros.UI.Registro
 
             registroP.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UI.Registro.RegistroCategoria registro = new RegistroCategoria();
+            registro.Show();
+
+        }
     }
 }

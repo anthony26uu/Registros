@@ -68,8 +68,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriasDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriasDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CategoriasDB.cs" />
     <Compile Include="DAL\PeliculasDB.cs" />
     <Compile Include="DAL\UsuarioDB.cs" />
+    <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Peliculas.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
@@ -97,6 +104,12 @@
     <Compile Include="UI\Consultar\Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultar\ConsultarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultar\ConsultarCategorias.Designer.cs">
+      <DependentUpon>ConsultarCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultar\Tipo De Busqueda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +121,12 @@
     </Compile>
     <Compile Include="UI\Registro\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registro\RegistroCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registro\RegistroCategoria.Designer.cs">
+      <DependentUpon>RegistroCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registro\RegistroPeliculas.cs">
       <SubType>Form</SubType>
@@ -149,11 +168,17 @@
     <EmbeddedResource Include="UI\Consultar\Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultar\ConsultarCategorias.resx">
+      <DependentUpon>ConsultarCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultar\Tipo De Busqueda.resx">
       <DependentUpon>Tipo De Busqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registro\RegistroCategoria.resx">
+      <DependentUpon>RegistroCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\RegistroPeliculas.resx">
       <DependentUpon>RegistroPeliculas.cs</DependentUpon>
@@ -162,6 +187,17 @@
       <DependentUpon>TipoRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="CategoriasDBDataSet.xsc">
+      <DependentUpon>CategoriasDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CategoriasDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoriasDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CategoriasDBDataSet.xss">
+      <DependentUpon>CategoriasDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="PeliculasDBDataSet.xsc">
       <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>
@@ -211,6 +247,13 @@
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\CategoriasDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase\CategoriasDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CategoriasDB.mdf</DependentUpon>
+    </Content>
     <Content Include="DataBase\PeliculaDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

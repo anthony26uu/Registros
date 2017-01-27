@@ -64,6 +64,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -94,8 +95,7 @@
             // 
             // Tipo_De_Busqueda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(376, 261);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -104,7 +104,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Tipo_De_Busqueda";
-            this.Text = "Tipo_De_Busqueda";
+            this.Text = "Tipo De Busqueda";
             this.ResumeLayout(false);
             this.PerformLayout();
 

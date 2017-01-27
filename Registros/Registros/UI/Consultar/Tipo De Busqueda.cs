@@ -28,5 +28,12 @@ namespace Registros.UI.Consultar
             UI.ConsultaPeliculas consulta = new ConsultaPeliculas();
             consulta.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UI.Consultar.ConsultarCategorias consultar = new ConsultarCategorias();
+            consultar.Show();
+
+        }
     }
 }

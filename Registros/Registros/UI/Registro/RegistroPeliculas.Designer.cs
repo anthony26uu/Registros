@@ -51,6 +51,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.peliculasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.Location = new System.Drawing.Point(62, 91);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.TabIndex = 1;
+            nombresLabel.Text = "Nombres:";
+            // 
+            // estrenoLabel
+            // 
+            estrenoLabel.AutoSize = true;
+            estrenoLabel.Location = new System.Drawing.Point(62, 117);
+            estrenoLabel.Name = "estrenoLabel";
+            estrenoLabel.Size = new System.Drawing.Size(46, 13);
+            estrenoLabel.TabIndex = 3;
+            estrenoLabel.Text = "Estreno:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(62, 143);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 5;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(62, 239);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(55, 13);
+            categoriaLabel.TabIndex = 7;
+            categoriaLabel.Text = "Categoria:";
+            // 
             // peliculasDBDataSet
             // 
             this.peliculasDBDataSet.DataSetName = "PeliculasDBDataSet";
@@ -71,15 +107,6 @@
             this.tableAdapterManager.PeliculasTableAdapter = this.peliculasTableAdapter;
             this.tableAdapterManager.UpdateOrder = Registros.PeliculasDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nombresLabel
-            // 
-            nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(62, 91);
-            nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(52, 13);
-            nombresLabel.TabIndex = 1;
-            nombresLabel.Text = "Nombres:";
-            // 
             // nombresTextBox
             // 
             this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peliculasBindingSource, "Nombres", true));
@@ -88,31 +115,15 @@
             this.nombresTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombresTextBox.TabIndex = 2;
             // 
-            // estrenoLabel
-            // 
-            estrenoLabel.AutoSize = true;
-            estrenoLabel.Location = new System.Drawing.Point(62, 117);
-            estrenoLabel.Name = "estrenoLabel";
-            estrenoLabel.Size = new System.Drawing.Size(46, 13);
-            estrenoLabel.TabIndex = 3;
-            estrenoLabel.Text = "Estreno:";
-            // 
             // estrenoMaskedTextBox
             // 
             this.estrenoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peliculasBindingSource, "Estreno", true));
             this.estrenoMaskedTextBox.Location = new System.Drawing.Point(134, 114);
+            this.estrenoMaskedTextBox.Mask = "00/00/0000";
             this.estrenoMaskedTextBox.Name = "estrenoMaskedTextBox";
             this.estrenoMaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.estrenoMaskedTextBox.TabIndex = 4;
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(62, 143);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 5;
-            descripcionLabel.Text = "Descripcion:";
+            this.estrenoMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // descripcionTextBox
             // 
@@ -122,15 +133,6 @@
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(158, 90);
             this.descripcionTextBox.TabIndex = 6;
-            // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(62, 239);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new System.Drawing.Size(55, 13);
-            categoriaLabel.TabIndex = 7;
-            categoriaLabel.Text = "Categoria:";
             // 
             // categoriaTextBox
             // 
