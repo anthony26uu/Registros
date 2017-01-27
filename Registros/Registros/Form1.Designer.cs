@@ -1,6 +1,6 @@
 ﻿namespace Registros
 {
-    partial class Usuarios
+    partial class Peliculas
     {
         /// <summary>
         /// Required designer variable.

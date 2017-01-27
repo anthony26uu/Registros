@@ -42,15 +42,10 @@ namespace Registros.UI.Registro
          
             DAL.UsuarioDB db = new DAL.UsuarioDB();
             Entidades.Usuario usuario = new Entidades.Usuario();
-      
 
             usuario.Usuarios = usuariosTextBox.Text;
             usuario.Nombres =  nombresTextBox.Text;
             usuario.clave = claveTextBox.Text;
-
-
-                       
-
 
             db.Usuario.Add(usuario);
             db.SaveChanges();

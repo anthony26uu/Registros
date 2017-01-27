@@ -9,31 +9,21 @@ using System.Windows.Forms;
 
 namespace Registros
 {
-    public partial class Usuarios : Form
+    public partial class Peliculas : Form
     {
-        public Usuarios()
+        public Peliculas()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            DAL.UsuarioDB db = new DAL.UsuarioDB();
-            Entidades.Usuario usuario = new Entidades.Usuario();
-
-            usuario.Usuarios = "anthony26u";
-            usuario.clave = "1234";
-            usuario.Nombres = "Anthony Santana";
-
-            db.Usuario.Add(usuario);
-             db.SaveChanges();
-    */
 
 
-            UI.Consultar.Consulta consultar = new UI.Consultar.Consulta();
+
+            UI.Consultar.Tipo_De_Busqueda  consultar = new UI.Consultar.Tipo_De_Busqueda();
             consultar.Show();
-           
+          
             
         }
 
@@ -44,8 +34,8 @@ namespace Registros
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UI.Registro.Registro registrar = new UI.Registro.Registro();
-
+       //     UI.Registro.Registro registrar = new UI.Registro.Registro();
+            UI.Registro.TipoRegistro registrar = new UI.Registro.TipoRegistro();
 
             registrar.Show();
         }

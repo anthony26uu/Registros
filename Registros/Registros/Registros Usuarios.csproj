@@ -11,6 +11,7 @@
     <AssemblyName>Registros</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -68,7 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\PeliculasDB.cs" />
     <Compile Include="DAL\UsuarioDB.cs" />
+    <Compile Include="Entidades\Peliculas.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -76,13 +78,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PeliculasDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultar\ConsultaPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultar\ConsultaPeliculas.Designer.cs">
+      <DependentUpon>ConsultaPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultar\Consulta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Consultar\Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultar\Tipo De Busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultar\Tipo De Busqueda.Designer.cs">
+      <DependentUpon>Tipo De Busqueda.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Registro\Registro.cs">
       <SubType>Form</SubType>
@@ -90,10 +109,27 @@
     <Compile Include="UI\Registro\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registro\RegistroPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registro\RegistroPeliculas.Designer.cs">
+      <DependentUpon>RegistroPeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registro\TipoRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registro\TipoRegistro.Designer.cs">
+      <DependentUpon>TipoRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UsuarioDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioDBDataSet1.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -107,14 +143,38 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Consultar\ConsultaPeliculas.resx">
+      <DependentUpon>ConsultaPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultar\Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultar\Tipo De Busqueda.resx">
+      <DependentUpon>Tipo De Busqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registro\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registro\RegistroPeliculas.resx">
+      <DependentUpon>RegistroPeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registro\TipoRegistro.resx">
+      <DependentUpon>TipoRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
+    <None Include="PeliculasDBDataSet.xsc">
+      <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PeliculasDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeliculasDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PeliculasDBDataSet.xss">
+      <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,12 +195,30 @@
     <None Include="UsuarioDBDataSet.xss">
       <DependentUpon>UsuarioDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="UsuarioDBDataSet1.xsc">
+      <DependentUpon>UsuarioDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UsuarioDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuarioDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsuarioDBDataSet1.xss">
+      <DependentUpon>UsuarioDBDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\PeliculaDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase\PeliculaDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PeliculaDB.mdf</DependentUpon>
+    </Content>
     <Content Include="DataBase\UsuarioDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

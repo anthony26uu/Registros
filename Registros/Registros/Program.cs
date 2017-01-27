@@ -15,7 +15,7 @@ namespace Registros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Usuarios());
+            Application.Run(new Peliculas());
         }
     }
 }
