@@ -42,7 +42,6 @@
             this.nombresLabel = new System.Windows.Forms.Label();
             this.usuariosTextBox = new System.Windows.Forms.TextBox();
             this.usuariosLabel = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.usuariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(89, 218);
+            this.button1.Location = new System.Drawing.Point(149, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 2;
@@ -153,16 +152,6 @@
             this.usuariosLabel.TabIndex = 5;
             this.usuariosLabel.Text = "Usuarios:";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(214, 220);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Eliminar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -212,7 +201,6 @@
             this.ClientSize = new System.Drawing.Size(651, 387);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.usuariosLabel);
             this.Controls.Add(this.usuariosTextBox);
             this.Controls.Add(this.nombresLabel);
@@ -248,7 +236,6 @@
         private System.Windows.Forms.Label nombresLabel;
         private System.Windows.Forms.TextBox usuariosTextBox;
         private System.Windows.Forms.Label usuariosLabel;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuariosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
