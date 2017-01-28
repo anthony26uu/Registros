@@ -44,8 +44,20 @@ namespace Registros.UI.Consultar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UI.Registro.RegistroCategoria registrar = new UI.Registro.RegistroCategoria();
-            registrar.Show();
+            DAL.CategoriasDB db = new DAL.CategoriasDB();
+            Entidades.Categorias categoria = new Entidades.Categorias();
+
+            categoria.Categoria = categoriaTextBox.Text;
+            categoria.Categoria = descripcionTextBox.Text;
+
+
+            db.Categorias.Add(categoria);
+            db.SaveChanges();
+
+            //Limpia al final de registtrar usuario
+            MessageBox.Show("Categoria Agregada correctamente");
+            categoriaTextBox.Text = "";
+            descripcionTextBox.Text = "";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -64,6 +76,17 @@ namespace Registros.UI.Consultar
             categoriaTextBox.Text = "";
             descripcionTextBox.Text = "";
            
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+        //    categoriaDataGridView.Rows.RemoveAt(categoriaDataGridView.CurrentRow.Index);
+            categoriaDataGridView.Rows.RemoveAt(p);
+        }
+
+        private void categoriaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

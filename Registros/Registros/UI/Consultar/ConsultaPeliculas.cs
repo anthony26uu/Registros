@@ -49,8 +49,27 @@ namespace Registros.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UI.Registro.RegistroPeliculas registrar = new UI.Registro.RegistroPeliculas();
-            registrar.Show();
+            DAL.PeliculasDB db = new DAL.PeliculasDB();
+
+            Entidades.Peliculas pelicula = new Entidades.Peliculas();
+
+
+
+            pelicula.Nombres = nombresTextBox.Text;
+            pelicula.Estreno = maskedTextBox1.Text;
+            pelicula.Categoria = categoriaTextBox.Text;
+            pelicula.Descripcion = descripcionTextBox.Text;
+
+
+            db.Peliculas.Add(pelicula);
+            db.SaveChanges();
+
+            //Limpia al final de registtrar usuario
+            MessageBox.Show("Usuario Agregado correctamente");
+            nombresTextBox.Text = "";
+            maskedTextBox1.Text = "";
+            categoriaTextBox.Text = "";
+            descripcionTextBox.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,7 +78,7 @@ namespace Registros.UI
             Entidades.Peliculas usuario = new Entidades.Peliculas();
 
             peliculasDataGridView[0, p].Value = nombresTextBox.Text;
-            peliculasDataGridView[1, p].Value = estrenoTextBox.Text;
+            peliculasDataGridView[1, p].Value = maskedTextBox1.Text;
             peliculasDataGridView[2, p].Value = descripcionTextBox.Text;
             peliculasDataGridView[3, p].Value = categoriaTextBox.Text;
 
@@ -68,9 +87,71 @@ namespace Registros.UI
 
             //Limpia al final de registtrar usuario
             nombresTextBox.Text = "";
-            estrenoTextBox.Text = "";
+            maskedTextBox1.Text = "";
             descripcionTextBox.Text = "";
             categoriaTextBox.Text = "";
+
+        }
+
+        private void buscarToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.peliculasTableAdapter.Buscar(this.peliculasDBDataSet.Peliculas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void buscar1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.peliculasTableAdapter.Buscar1(this.peliculasDBDataSet.Peliculas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void buscar1ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void buscar2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.peliculasTableAdapter.Buscar2(this.peliculasDBDataSet.Peliculas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void peliculasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buscaToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.peliculasTableAdapter.Busca(this.peliculasDBDataSet.Peliculas);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

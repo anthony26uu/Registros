@@ -62,7 +62,18 @@ SELECT Usuarios, Nombres, clave FROM Usuario WHERE (Usuarios = @Usuarios)</Comma
               <Mapping SourceColumn="Nombres" DataSetColumn="Nombres" />
               <Mapping SourceColumn="clave" DataSetColumn="clave" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConStr (Settings)" DbObjectName="dbo.Usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Buscar001" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Buscar001" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Buscar001">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Usuarios, Nombres, clave
+FROM            Usuario
+WHERE        (Usuarios = 'LIKE@Usuarios' + '%')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -72,7 +83,7 @@ SELECT Usuarios, Nombres, clave FROM Usuario WHERE (Usuarios = @Usuarios)</Comma
   <xs:element name="UsuarioDBDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="UsuarioDBDataSet1" msprop:Generator_UserDSName="UsuarioDBDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_RowClassName="UsuarioRow" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Usuarios" msprop:Generator_ColumnVarNameInTable="columnUsuarios" msprop:Generator_ColumnPropNameInRow="Usuarios" msprop:Generator_ColumnPropNameInTable="UsuariosColumn" msprop:Generator_UserColumnName="Usuarios">
