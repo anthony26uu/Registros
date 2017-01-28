@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ElimnarUsuarios.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="CategoriasDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -64,9 +64,7 @@ namespace Registros.UI.Consultar
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //  UI.Registro.Registro registrar = new UI.Registro.Registro();
-            //registrar.Show();
-
+        
             DAL.UsuarioDB db = new DAL.UsuarioDB();
             Entidades.Usuario usuario = new Entidades.Usuario();
 
@@ -131,6 +129,11 @@ namespace Registros.UI.Consultar
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            
+
+  
+           // usuarioBindingSource.Remove(dataGridView1);
 
 
         }
