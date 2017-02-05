@@ -68,12 +68,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\ElimnarUsuarios.cs" />
-    <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="BLL\CategoriaBLL.cs" />
+    <Compile Include="BLL\PeliculasBLL.cs" />
+    <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="CategoriasDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoriasDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriasDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoriasDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DAL\CategoriasDB.cs" />
     <Compile Include="DAL\PeliculasDB.cs" />
@@ -86,6 +92,11 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeliculaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PeliculaDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PeliculasDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -200,7 +211,29 @@
     <None Include="CategoriasDBDataSet.xss">
       <DependentUpon>CategoriasDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="CategoriasDBDataSet1.xsc">
+      <DependentUpon>CategoriasDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CategoriasDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoriasDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CategoriasDBDataSet1.xss">
+      <DependentUpon>CategoriasDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="PeliculaDBDataSet.xsc">
+      <DependentUpon>PeliculaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PeliculaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PeliculaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PeliculaDBDataSet.xss">
+      <DependentUpon>PeliculaDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="PeliculasDBDataSet.xsc">
       <DependentUpon>PeliculasDBDataSet.xsd</DependentUpon>
     </None>

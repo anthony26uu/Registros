@@ -29,6 +29,8 @@ namespace Registros.UI
 
         private void ConsultaPeliculas_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'peliculaDBDataSet.Peliculas' table. You can move, or remove it, as needed.
+            this.peliculasTableAdapter1.Fill(this.peliculaDBDataSet.Peliculas);
             // TODO: This line of code loads data into the 'peliculasDBDataSet.Peliculas' table. You can move, or remove it, as needed.
             this.peliculasTableAdapter.Fill(this.peliculasDBDataSet.Peliculas);
 
@@ -49,23 +51,26 @@ namespace Registros.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DAL.PeliculasDB db = new DAL.PeliculasDB();
-
-            Entidades.Peliculas pelicula = new Entidades.Peliculas();
 
 
-
-            pelicula.Nombres = nombresTextBox.Text;
+            var pelicula = new Peliculas();
+         
             pelicula.Estreno = maskedTextBox1.Text;
-            pelicula.Categoria = categoriaTextBox.Text;
             pelicula.Descripcion = descripcionTextBox.Text;
+            pelicula.Categoria = categoriaTextBox.Text;
+            pelicula.Id = textBox1.Text;
+         //   pelicula.Nombres = nombresTextBox.Text;
 
 
-            db.Peliculas.Add(pelicula);
-            db.SaveChanges();
+            if (pelicula != null)
+            {
+                BLL.PeliculasBLL.Insertar(pelicula);
+                MessageBox.Show("Pelicula agregada correctamente");
+
+            }
 
             //Limpia al final de registtrar usuario
-            MessageBox.Show("Usuario Agregado correctamente");
+            textBox1.Text = "";
             nombresTextBox.Text = "";
             maskedTextBox1.Text = "";
             categoriaTextBox.Text = "";
@@ -152,6 +157,56 @@ namespace Registros.UI
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var elim = BLL.PeliculasBLL.Buscar(Convert.ToInt32(nombresTextBox.Text));
+            if (elim != null)
+            {
+                BLL.PeliculasBLL.Eliminar(elim);
+                MessageBox.Show("Eliminado...");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Elimimnado...");
+            }
+            textBox1.Text = "";
+            nombresTextBox.Text = "";
+            maskedTextBox1.Text = "";
+            categoriaTextBox.Text = "";
+            descripcionTextBox.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {          
+                var buscar = BLL.PeliculasBLL.Buscar(Convert.ToInt32(nombresTextBox.Text));
+                if (buscar != null)
+                {
+
+                 // nombresTextBox.Text = buscar.Nombres;
+                    maskedTextBox1.Text = buscar.Estreno;
+                    categoriaTextBox.Text = buscar.Categoria;
+                    descripcionTextBox.Text = buscar.Descripcion;
+                textBox1.Text = buscar.Id;
+                    MessageBox.Show("Resultados de busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("Campo Vacio");
+                }
+            
+           
+          
+
+            //Limpia al final de registtrar usuario
+           
+           
+        }
+
+        private void peliculasDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

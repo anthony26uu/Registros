@@ -40,13 +40,15 @@
             this.claveLabel = new System.Windows.Forms.Label();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.nombresLabel = new System.Windows.Forms.Label();
-            this.usuariosTextBox = new System.Windows.Forms.TextBox();
             this.usuariosLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.usuariosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(149, 217);
+            this.button1.Location = new System.Drawing.Point(146, 212);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 2;
@@ -84,7 +86,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(544, 178);
+            this.button3.Location = new System.Drawing.Point(410, 157);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -104,7 +106,7 @@
             // claveTextBox
             // 
             this.claveTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "clave", true));
-            this.claveTextBox.Location = new System.Drawing.Point(531, 120);
+            this.claveTextBox.Location = new System.Drawing.Point(465, 101);
             this.claveTextBox.Name = "claveTextBox";
             this.claveTextBox.Size = new System.Drawing.Size(100, 20);
             this.claveTextBox.TabIndex = 10;
@@ -112,7 +114,7 @@
             // claveLabel
             // 
             this.claveLabel.AutoSize = true;
-            this.claveLabel.Location = new System.Drawing.Point(473, 123);
+            this.claveLabel.Location = new System.Drawing.Point(407, 104);
             this.claveLabel.Name = "claveLabel";
             this.claveLabel.Size = new System.Drawing.Size(36, 13);
             this.claveLabel.TabIndex = 9;
@@ -121,7 +123,7 @@
             // nombresTextBox
             // 
             this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombres", true));
-            this.nombresTextBox.Location = new System.Drawing.Point(531, 94);
+            this.nombresTextBox.Location = new System.Drawing.Point(465, 75);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombresTextBox.TabIndex = 8;
@@ -129,24 +131,16 @@
             // nombresLabel
             // 
             this.nombresLabel.AutoSize = true;
-            this.nombresLabel.Location = new System.Drawing.Point(473, 97);
+            this.nombresLabel.Location = new System.Drawing.Point(407, 78);
             this.nombresLabel.Name = "nombresLabel";
             this.nombresLabel.Size = new System.Drawing.Size(52, 13);
             this.nombresLabel.TabIndex = 7;
             this.nombresLabel.Text = "Nombres:";
             // 
-            // usuariosTextBox
-            // 
-            this.usuariosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Usuarios", true));
-            this.usuariosTextBox.Location = new System.Drawing.Point(531, 68);
-            this.usuariosTextBox.Name = "usuariosTextBox";
-            this.usuariosTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usuariosTextBox.TabIndex = 6;
-            // 
             // usuariosLabel
             // 
             this.usuariosLabel.AutoSize = true;
-            this.usuariosLabel.Location = new System.Drawing.Point(473, 71);
+            this.usuariosLabel.Location = new System.Drawing.Point(407, 52);
             this.usuariosLabel.Name = "usuariosLabel";
             this.usuariosLabel.Size = new System.Drawing.Size(51, 13);
             this.usuariosLabel.TabIndex = 5;
@@ -194,15 +188,46 @@
             this.label2.Text = "REGISTRAR NUEVO";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(510, 157);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(582, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Buscar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(465, 48);
+            this.maskedTextBox1.Mask = "99999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 18;
+            this.maskedTextBox1.ValidatingType = typeof(int);
+            // 
             // Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 387);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.usuariosLabel);
-            this.Controls.Add(this.usuariosTextBox);
             this.Controls.Add(this.nombresLabel);
             this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(this.claveLabel);
@@ -234,12 +259,14 @@
         private System.Windows.Forms.Label claveLabel;
         private System.Windows.Forms.TextBox nombresTextBox;
         private System.Windows.Forms.Label nombresLabel;
-        private System.Windows.Forms.TextBox usuariosTextBox;
         private System.Windows.Forms.Label usuariosLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuariosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

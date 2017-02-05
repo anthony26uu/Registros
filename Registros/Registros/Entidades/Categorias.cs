@@ -11,6 +11,7 @@ namespace Registros.Entidades
         [Key]
         public string Categoria { get; set; }
         public string Descripcion { get; set; }
+        public string id { get; set; }
 
         public Categorias()
         {

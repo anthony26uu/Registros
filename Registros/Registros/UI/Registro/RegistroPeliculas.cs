@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Registros.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,27 +34,32 @@ namespace Registros.UI.Registro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DAL.PeliculasDB db = new DAL.PeliculasDB();
-   
-            Entidades.Peliculas pelicula = new Entidades.Peliculas();
-          
+            var pelicula = new Peliculas();
+
+            pelicula.Estreno =  estrenoMaskedTextBox.Text;
+            pelicula.Descripcion = descripcionTextBox.Text;
+            pelicula.Categoria = categoriaTextBox.Text;
+            pelicula.Id = textBox1.Text;
+        
+
+            //   pelicula.Nombres = nombresTextBox.Text;
 
 
-          pelicula.Nombres = nombresTextBox.Text;
-           pelicula.Estreno = estrenoMaskedTextBox.Text;
-         pelicula.Categoria = categoriaTextBox.Text;
-        pelicula.Descripcion = descripcionTextBox.Text;
+            if (pelicula != null)
+            {
+                BLL.PeliculasBLL.Insertar(pelicula);
+                MessageBox.Show("Pelicula agregada correctamente");
 
-
-            db.Peliculas.Add(pelicula);
-            db.SaveChanges();
+            }
 
             //Limpia al final de registtrar usuario
-            MessageBox.Show("Usuario Agregado correctamente");
-            nombresTextBox.Text = "";
-            estrenoMaskedTextBox.Text = "";
+            textBox1.Text = "";
+            //nombresTextBox.Text = "";
+            //maskedTextBox1.Text = "";
             categoriaTextBox.Text = "";
             descripcionTextBox.Text = "";
+          
+
         }
     }
 }

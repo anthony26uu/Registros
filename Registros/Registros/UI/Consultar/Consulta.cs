@@ -57,27 +57,29 @@ namespace Registros.UI.Consultar
             List<Usuario> Lista = new List<Usuario>();
             var db = new UsuarioDB();
             Lista = db.Usuario.ToList();
-
             dataGridView1.DataSource = Lista;
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-        
-            DAL.UsuarioDB db = new DAL.UsuarioDB();
-            Entidades.Usuario usuario = new Entidades.Usuario();
 
-            usuario.Usuarios = usuariosTextBox.Text;
-            usuario.Nombres = nombresTextBox.Text;
+            var usuario = new Usuario();
+
+            usuario.Nombres = maskedTextBox1.Text;
             usuario.clave = claveTextBox.Text;
+          //  usuario.Usuarios = usuariosTextBox.Text;
 
-            db.Usuario.Add(usuario);
-            db.SaveChanges();
+            if (usuario != null)
+            {
+                BLL.UsuariosBLL.Insertar(usuario);
+              
+            }
+
+
 
             //Limpia al final de registtrar usuario
             MessageBox.Show("Usuario Agregado correctamente");
-            usuariosTextBox.Text = "";
+            maskedTextBox1.Text = "";
             nombresTextBox.Text = "";
             claveTextBox.Text = "";
 
@@ -88,7 +90,7 @@ namespace Registros.UI.Consultar
             DAL.UsuarioDB db = new DAL.UsuarioDB();
             Entidades.Usuario usuario = new Entidades.Usuario();
 
-            dataGridView1[0, p].Value = usuariosTextBox.Text;
+            dataGridView1[0, p].Value = maskedTextBox1.Text;
             dataGridView1[2, p].Value = nombresTextBox.Text;
             dataGridView1[1, p].Value = claveTextBox.Text;
 
@@ -101,7 +103,7 @@ namespace Registros.UI.Consultar
 
 
             //Limpia al final de registtrar usuario
-            usuariosTextBox.Text = "";
+            maskedTextBox1.Text = "";
             nombresTextBox.Text = "";
             claveTextBox.Text = "";
 
@@ -112,7 +114,7 @@ namespace Registros.UI.Consultar
             p = dataGridView1.CurrentRow.Index;
 
 
-            usuariosTextBox.Text = dataGridView1[0, p].Value.ToString();
+            maskedTextBox1.Text = dataGridView1[0, p].Value.ToString();
             nombresTextBox.Text = dataGridView1[2, p].Value.ToString();
             claveTextBox.Text = dataGridView1[1, p].Value.ToString();
 
@@ -152,6 +154,38 @@ namespace Registros.UI.Consultar
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var Elimina = BLL.UsuariosBLL.Buscar(Convert.ToInt32(maskedTextBox1.Text));
+
+            if (Elimina != null)
+            {
+                BLL.UsuariosBLL.Eliminar(Elimina);
+               
+                maskedTextBox1.Text = "";
+
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado...");
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            var usuario = BLL.UsuariosBLL.Buscar(Convert.ToInt32(maskedTextBox1.Text));
+
+            if (usuario != null)
+            {
+                nombresTextBox.Text = usuario.Nombres;
+                claveTextBox.Text = usuario.clave;
+
+                MessageBox.Show("Estos son sus resultados.");
+            }
+
+          
         }
     }
     }

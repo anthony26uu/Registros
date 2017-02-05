@@ -37,12 +37,12 @@
             this.peliculasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.peliculasTableAdapter = new Registros.PeliculasDBDataSetTableAdapters.PeliculasTableAdapter();
             this.tableAdapterManager = new Registros.PeliculasDBDataSetTableAdapters.TableAdapterManager();
-            this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.estrenoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.categoriaTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             nombresLabel = new System.Windows.Forms.Label();
             estrenoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(62, 91);
+            nombresLabel.Location = new System.Drawing.Point(65, 73);
             nombresLabel.Name = "nombresLabel";
             nombresLabel.Size = new System.Drawing.Size(52, 13);
             nombresLabel.TabIndex = 1;
@@ -107,14 +107,6 @@
             this.tableAdapterManager.PeliculasTableAdapter = this.peliculasTableAdapter;
             this.tableAdapterManager.UpdateOrder = Registros.PeliculasDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // nombresTextBox
-            // 
-            this.nombresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peliculasBindingSource, "Nombres", true));
-            this.nombresTextBox.Location = new System.Drawing.Point(134, 88);
-            this.nombresTextBox.Name = "nombresTextBox";
-            this.nombresTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombresTextBox.TabIndex = 2;
-            // 
             // estrenoMaskedTextBox
             // 
             this.estrenoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.peliculasBindingSource, "Estreno", true));
@@ -161,15 +153,22 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Registrar Peliculas";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(137, 73);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
             // RegistroPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 385);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(nombresLabel);
-            this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(estrenoLabel);
             this.Controls.Add(this.estrenoMaskedTextBox);
             this.Controls.Add(descripcionLabel);
@@ -192,11 +191,11 @@
         private System.Windows.Forms.BindingSource peliculasBindingSource;
         private PeliculasDBDataSetTableAdapters.PeliculasTableAdapter peliculasTableAdapter;
         private PeliculasDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox nombresTextBox;
         private System.Windows.Forms.MaskedTextBox estrenoMaskedTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox categoriaTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

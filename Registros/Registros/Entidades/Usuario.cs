@@ -9,7 +9,7 @@ namespace Registros.Entidades
     public class Usuario
     {
         [Key]
-        public string Usuarios { get; set; }
+        public int Usuarios { get; set; }
         public string clave { get; set; }
         public string Nombres { get; set; }
        

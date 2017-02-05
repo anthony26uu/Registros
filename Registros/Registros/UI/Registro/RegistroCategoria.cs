@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Registros.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,16 +34,25 @@ namespace Registros.UI.Registro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DAL.CategoriasDB db = new DAL.CategoriasDB();
-            Entidades.Categorias categoria = new Entidades.Categorias();
-
+            var categoria = new Categorias();
+            categoria.id = maskedTextBox1.Text;
+            categoria.Descripcion = descripcionTextBox.Text;
             categoria.Categoria = categoriaTextBox.Text;
-            categoria.Categoria = descripcionTextBox.Text;
 
 
-            db.Categorias.Add(categoria);
-            db.SaveChanges();
+            if (categoria != null)
+            {
+                BLL.CategoriaBLL.Insertar(categoria);
+                MessageBox.Show("Guardando...");
+            }
 
+
+
+            //Limpia al final de registtrar usuario
+            MessageBox.Show("Categoria Agregada correctamente");
+            categoriaTextBox.Text = "";
+            maskedTextBox1.Text = "";
+            descripcionTextBox.Text = "";
             //Limpia al final de registtrar usuario
             MessageBox.Show("Categoria Agregada correctamente");
             categoriaTextBox.Text = "";

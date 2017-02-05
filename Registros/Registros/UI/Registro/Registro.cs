@@ -1,4 +1,4 @@
-﻿using Registros.BLL;
+﻿
 using Registros.DAL;
 using Registros.Entidades;
 using System;
@@ -45,7 +45,7 @@ namespace Registros.UI.Registro
             Usuario n = new Usuario();
             n.Nombres = nombresTextBox.Text;
             n.clave = claveTextBox.Text;
-            n.Usuarios = usuariosTextBox.Text;
+         //   n.Usuarios = usuariosTextBox.Text;
             return n;
 
         }
@@ -60,7 +60,7 @@ namespace Registros.UI.Registro
 
 
             
-            usuario.Usuarios = usuariosTextBox.Text;
+        //    usuario.Usuarios = usuariosTextBox.Text;
             usuario.Nombres =  nombresTextBox.Text;
             usuario.clave = claveTextBox.Text;
 
@@ -113,18 +113,25 @@ namespace Registros.UI.Registro
         
         private void button2_Click(object sender, EventArgs e)
         {
+            var usuario = new Usuario();
 
-            DAL.UsuarioDB db = new DAL.UsuarioDB();
-            Entidades.Usuario usuario = new Entidades.Usuario();
-
-
-
-            usuario.Usuarios = usuariosTextBox.Text;
-            usuario.Nombres = nombresTextBox.Text;
+            usuario.Nombres = usuariosTextBox.Text;
             usuario.clave = claveTextBox.Text;
+            //  usuario.Usuarios = usuariosTextBox.Text;
 
-            db.Usuario.Add(usuario);
-            db.SaveChanges();
+            if (usuario != null)
+            {
+                BLL.UsuariosBLL.Insertar(usuario);
+                MessageBox.Show("Guardado Usuario...");
+            }
+
+
+
+            //Limpia al final de registtrar usuario
+            MessageBox.Show("Usuario Agregado correctamente");
+            usuariosTextBox.Text = "";
+            nombresTextBox.Text = "";
+            claveTextBox.Text = "";
 
             //Limpia al final de registtrar usuario
             MessageBox.Show("Usuario Agregado correctamente");

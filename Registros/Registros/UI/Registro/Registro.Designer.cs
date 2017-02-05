@@ -32,15 +32,15 @@
             System.Windows.Forms.Label usuariosLabel;
             System.Windows.Forms.Label nombresLabel;
             System.Windows.Forms.Label claveLabel;
-            this.usuariosTextBox = new System.Windows.Forms.TextBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioDBDataSet = new Registros.UsuarioDBDataSet();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.claveTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioDBDataSet = new Registros.UsuarioDBDataSet();
             this.usuarioTableAdapter = new Registros.UsuarioDBDataSetTableAdapters.UsuarioTableAdapter();
             this.tableAdapterManager = new Registros.UsuarioDBDataSetTableAdapters.TableAdapterManager();
             this.button2 = new System.Windows.Forms.Button();
+            this.usuariosTextBox = new System.Windows.Forms.MaskedTextBox();
             usuariosLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             claveLabel = new System.Windows.Forms.Label();
@@ -78,14 +78,15 @@
             claveLabel.Text = "clave:";
             claveLabel.Click += new System.EventHandler(this.claveLabel_Click);
             // 
-            // usuariosTextBox
+            // usuarioBindingSource
             // 
-            this.usuariosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Usuarios", true));
-            this.usuariosTextBox.Location = new System.Drawing.Point(207, 97);
-            this.usuariosTextBox.Name = "usuariosTextBox";
-            this.usuariosTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usuariosTextBox.TabIndex = 2;
-            this.usuariosTextBox.TextChanged += new System.EventHandler(this.usuariosTextBox_TextChanged);
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.usuarioDBDataSet;
+            // 
+            // usuarioDBDataSet
+            // 
+            this.usuarioDBDataSet.DataSetName = "UsuarioDBDataSet";
+            this.usuarioDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nombresTextBox
             // 
@@ -115,16 +116,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Inserte datos";
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataMember = "Usuario";
-            this.usuarioBindingSource.DataSource = this.usuarioDBDataSet;
-            // 
-            // usuarioDBDataSet
-            // 
-            this.usuarioDBDataSet.DataSetName = "UsuarioDBDataSet";
-            this.usuarioDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usuarioTableAdapter
             // 
             this.usuarioTableAdapter.ClearBeforeFill = true;
@@ -145,15 +136,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // usuariosTextBox
+            // 
+            this.usuariosTextBox.Location = new System.Drawing.Point(207, 93);
+            this.usuariosTextBox.Mask = "99999";
+            this.usuariosTextBox.Name = "usuariosTextBox";
+            this.usuariosTextBox.Size = new System.Drawing.Size(100, 20);
+            this.usuariosTextBox.TabIndex = 10;
+            this.usuariosTextBox.ValidatingType = typeof(int);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 316);
+            this.Controls.Add(this.usuariosTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(usuariosLabel);
-            this.Controls.Add(this.usuariosTextBox);
             this.Controls.Add(nombresLabel);
             this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(claveLabel);
@@ -174,10 +174,10 @@
         private System.Windows.Forms.BindingSource usuarioBindingSource;
         private UsuarioDBDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
         private UsuarioDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox usuariosTextBox;
         private System.Windows.Forms.TextBox nombresTextBox;
         private System.Windows.Forms.TextBox claveTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox usuariosTextBox;
     }
 }

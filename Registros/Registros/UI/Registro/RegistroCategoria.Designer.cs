@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label categoriaLabel;
             System.Windows.Forms.Label descripcionLabel;
+            System.Windows.Forms.Label label2;
             this.categoriasDBDataSet = new Registros.CategoriasDBDataSet();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Registros.CategoriasDBDataSetTableAdapters.CategoriaTableAdapter();
@@ -39,11 +40,31 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             categoriaLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoriasDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(84, 122);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(55, 13);
+            categoriaLabel.TabIndex = 1;
+            categoriaLabel.Text = "Categoria:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(84, 148);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 3;
+            descripcionLabel.Text = "Descripcion:";
             // 
             // categoriasDBDataSet
             // 
@@ -65,15 +86,6 @@
             this.tableAdapterManager.CategoriaTableAdapter = this.categoriaTableAdapter;
             this.tableAdapterManager.UpdateOrder = Registros.CategoriasDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(84, 122);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new System.Drawing.Size(55, 13);
-            categoriaLabel.TabIndex = 1;
-            categoriaLabel.Text = "Categoria:";
-            // 
             // categoriaTextBox
             // 
             this.categoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "Categoria", true));
@@ -81,15 +93,6 @@
             this.categoriaTextBox.Name = "categoriaTextBox";
             this.categoriaTextBox.Size = new System.Drawing.Size(100, 20);
             this.categoriaTextBox.TabIndex = 2;
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(84, 148);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 3;
-            descripcionLabel.Text = "Descripcion:";
             // 
             // descripcionTextBox
             // 
@@ -113,17 +116,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 69);
+            this.label1.Location = new System.Drawing.Point(159, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Registrar Categoria";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(84, 74);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(18, 13);
+            label2.TabIndex = 7;
+            label2.Text = "ID";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(156, 66);
+            this.maskedTextBox1.Mask = "99999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 8;
+            this.maskedTextBox1.ValidatingType = typeof(int);
             // 
             // RegistroCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 365);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(categoriaLabel);
@@ -150,5 +173,6 @@
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

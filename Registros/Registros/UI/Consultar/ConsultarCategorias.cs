@@ -13,7 +13,7 @@ namespace Registros.UI.Consultar
 {
     public partial class ConsultarCategorias : Form
     {
-        int p;
+       
         public ConsultarCategorias()
         {
             InitializeComponent();
@@ -29,6 +29,8 @@ namespace Registros.UI.Consultar
 
         private void ConsultarCategorias_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'categoriasDBDataSet1.Categoria' table. You can move, or remove it, as needed.
+            this.categoriaTableAdapter1.Fill(this.categoriasDBDataSet1.Categoria);
             // TODO: This line of code loads data into the 'categoriasDBDataSet.Categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.Fill(this.categoriasDBDataSet.Categoria);
 
@@ -44,49 +46,69 @@ namespace Registros.UI.Consultar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DAL.CategoriasDB db = new DAL.CategoriasDB();
-            Entidades.Categorias categoria = new Entidades.Categorias();
-
+            var categoria = new Categorias();
+            categoria.id = maskedTextBox1.Text;
+            categoria.Descripcion = descripcionTextBox.Text;
             categoria.Categoria = categoriaTextBox.Text;
-            categoria.Categoria = descripcionTextBox.Text;
+          
 
+            if (categoria != null)
+            {
+                BLL.CategoriaBLL.Insertar(categoria);
+               
+            }
 
-            db.Categorias.Add(categoria);
-            db.SaveChanges();
+           
 
             //Limpia al final de registtrar usuario
             MessageBox.Show("Categoria Agregada correctamente");
             categoriaTextBox.Text = "";
+            maskedTextBox1.Text = "";
             descripcionTextBox.Text = "";
+          
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            DAL.UsuarioDB db = new DAL.UsuarioDB();
-            Entidades.Usuario usuario = new Entidades.Usuario();
+       
 
-            categoriaDataGridView[0, p].Value = categoriaTextBox.Text;
-            categoriaDataGridView[1, p].Value = descripcionTextBox.Text;
-
-
-
-
-
-            //Limpia al final de registtrar usuario
-            categoriaTextBox.Text = "";
-            descripcionTextBox.Text = "";
-           
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-        //    categoriaDataGridView.Rows.RemoveAt(categoriaDataGridView.CurrentRow.Index);
-            categoriaDataGridView.Rows.RemoveAt(p);
-        }
-
+       
         private void categoriaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            var bus = BLL.CategoriaBLL.Buscar(maskedTextBox1.Text);
+
+            if (bus != null)
+            {
+              
+                descripcionTextBox.Text = bus.Descripcion;
+                categoriaTextBox.Text = bus.Categoria;
+                MessageBox.Show("Busqueda Correcta...");
+            }
+
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var categ = BLL.CategoriaBLL.Buscar(maskedTextBox1.Text);
+
+            if (categ != null)
+            {
+                BLL.CategoriaBLL.Eliminar(categ);
+                MessageBox.Show("Eliminado...");
+               
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado...");
+            }
+
+            maskedTextBox1.Text = "";
+            descripcionTextBox.Text = "";
+            categoriaTextBox.Text = "";
         }
     }
 }
