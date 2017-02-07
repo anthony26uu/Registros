@@ -156,5 +156,36 @@ namespace Registros.UI.Registro
             */
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var Elimina = BLL.UsuariosBLL.Buscar(Convert.ToInt32(usuariosTextBox.Text));
+
+            if (Elimina != null)
+            {
+                BLL.UsuariosBLL.Eliminar(Elimina);
+
+                usuariosTextBox.Text = "";
+
+            }
+            else
+            {
+                MessageBox.Show("No se ha Eliminado...");
+            }
+        }
+
+        private void butBuscar_Click(object sender, EventArgs e)
+        {
+            var usuario = BLL.UsuariosBLL.Buscar(Convert.ToInt32(usuariosTextBox.Text));
+
+            if (usuario != null)
+            {
+                nombresTextBox.Text = usuario.Nombres;
+                claveTextBox.Text = usuario.clave;
+
+                MessageBox.Show("Estos son sus resultados.");
+            }
+
+        }
     }
 }

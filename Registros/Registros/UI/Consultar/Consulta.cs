@@ -63,50 +63,14 @@ namespace Registros.UI.Consultar
         private void button3_Click(object sender, EventArgs e)
         {
 
-            var usuario = new Usuario();
-
-            usuario.Nombres = maskedTextBox1.Text;
-            usuario.clave = claveTextBox.Text;
-          //  usuario.Usuarios = usuariosTextBox.Text;
-
-            if (usuario != null)
-            {
-                BLL.UsuariosBLL.Insertar(usuario);
-              
-            }
-
-
-
-            //Limpia al final de registtrar usuario
-            MessageBox.Show("Usuario Agregado correctamente");
-            maskedTextBox1.Text = "";
-            nombresTextBox.Text = "";
-            claveTextBox.Text = "";
+          
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DAL.UsuarioDB db = new DAL.UsuarioDB();
-            Entidades.Usuario usuario = new Entidades.Usuario();
-
-            dataGridView1[0, p].Value = maskedTextBox1.Text;
-            dataGridView1[2, p].Value = nombresTextBox.Text;
-            dataGridView1[1, p].Value = claveTextBox.Text;
-
-            db.Usuario.Add(usuario);
-            db.SaveChanges();
-
-
-
-
-
-
-            //Limpia al final de registtrar usuario
-            maskedTextBox1.Text = "";
-            nombresTextBox.Text = "";
-            claveTextBox.Text = "";
-
+           
+          
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -114,10 +78,7 @@ namespace Registros.UI.Consultar
             p = dataGridView1.CurrentRow.Index;
 
 
-            maskedTextBox1.Text = dataGridView1[0, p].Value.ToString();
-            nombresTextBox.Text = dataGridView1[2, p].Value.ToString();
-            claveTextBox.Text = dataGridView1[1, p].Value.ToString();
-
+        
 
 
 
@@ -158,34 +119,11 @@ namespace Registros.UI.Consultar
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var Elimina = BLL.UsuariosBLL.Buscar(Convert.ToInt32(maskedTextBox1.Text));
-
-            if (Elimina != null)
-            {
-                BLL.UsuariosBLL.Eliminar(Elimina);
-               
-                maskedTextBox1.Text = "";
-
-            }
-            else
-            {
-                MessageBox.Show("No se ha Eliminado...");
-            }
+            
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            var usuario = BLL.UsuariosBLL.Buscar(Convert.ToInt32(maskedTextBox1.Text));
-
-            if (usuario != null)
-            {
-                nombresTextBox.Text = usuario.Nombres;
-                claveTextBox.Text = usuario.clave;
-
-                MessageBox.Show("Estos son sus resultados.");
-            }
-
-          
         }
 
         private void usuariosLabel_Click(object sender, EventArgs e)

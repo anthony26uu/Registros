@@ -41,6 +41,8 @@
             this.tableAdapterManager = new Registros.UsuarioDBDataSetTableAdapters.TableAdapterManager();
             this.button2 = new System.Windows.Forms.Button();
             this.usuariosTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.butBuscar = new System.Windows.Forms.Button();
             usuariosLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             claveLabel = new System.Windows.Forms.Label();
@@ -110,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 30);
+            this.label1.Location = new System.Drawing.Point(217, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 8;
@@ -128,7 +130,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(217, 197);
+            this.button2.Location = new System.Drawing.Point(220, 198);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -145,11 +147,33 @@
             this.usuariosTextBox.TabIndex = 10;
             this.usuariosTextBox.ValidatingType = typeof(int);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(317, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // butBuscar
+            // 
+            this.butBuscar.Location = new System.Drawing.Point(348, 93);
+            this.butBuscar.Name = "butBuscar";
+            this.butBuscar.Size = new System.Drawing.Size(75, 23);
+            this.butBuscar.TabIndex = 12;
+            this.butBuscar.Text = "Buscar";
+            this.butBuscar.UseVisualStyleBackColor = true;
+            this.butBuscar.Click += new System.EventHandler(this.butBuscar_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 316);
+            this.Controls.Add(this.butBuscar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.usuariosTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -179,5 +203,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MaskedTextBox usuariosTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butBuscar;
     }
 }

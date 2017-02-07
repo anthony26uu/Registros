@@ -46,25 +46,7 @@ namespace Registros.UI.Consultar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var categoria = new Categorias();
-            categoria.id = maskedTextBox1.Text;
-            categoria.Descripcion = descripcionTextBox.Text;
-            categoria.Categoria = categoriaTextBox.Text;
-          
-
-            if (categoria != null)
-            {
-                BLL.CategoriaBLL.Insertar(categoria);
-               
-            }
-
-           
-
-            //Limpia al final de registtrar usuario
-            MessageBox.Show("Categoria Agregada correctamente");
-            categoriaTextBox.Text = "";
-            maskedTextBox1.Text = "";
-            descripcionTextBox.Text = "";
+         
           
         }
 
@@ -78,37 +60,14 @@ namespace Registros.UI.Consultar
 
         private void button3_Click_2(object sender, EventArgs e)
         {
-            var bus = BLL.CategoriaBLL.Buscar(maskedTextBox1.Text);
-
-            if (bus != null)
-            {
-              
-                descripcionTextBox.Text = bus.Descripcion;
-                categoriaTextBox.Text = bus.Categoria;
-                MessageBox.Show("Busqueda Correcta...");
-            }
+            
 
             
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var categ = BLL.CategoriaBLL.Buscar(maskedTextBox1.Text);
-
-            if (categ != null)
-            {
-                BLL.CategoriaBLL.Eliminar(categ);
-                MessageBox.Show("Eliminado...");
-               
-            }
-            else
-            {
-                MessageBox.Show("No se ha Eliminado...");
-            }
-
-            maskedTextBox1.Text = "";
-            descripcionTextBox.Text = "";
-            categoriaTextBox.Text = "";
+          
         }
     }
 }

@@ -34,14 +34,22 @@ namespace Registros.UI.Registro
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
             var pelicula = new Peliculas();
 
-            pelicula.Estreno =  estrenoMaskedTextBox.Text;
+            pelicula.Estreno = maskedTextBox1.Text;
             pelicula.Descripcion = descripcionTextBox.Text;
             pelicula.Categoria = categoriaTextBox.Text;
             pelicula.Id = textBox1.Text;
-        
-
             //   pelicula.Nombres = nombresTextBox.Text;
 
 
@@ -54,12 +62,29 @@ namespace Registros.UI.Registro
 
             //Limpia al final de registtrar usuario
             textBox1.Text = "";
-            //nombresTextBox.Text = "";
-            //maskedTextBox1.Text = "";
+            nombresTextBox.Text = "";
+            maskedTextBox1.Text = "";
             categoriaTextBox.Text = "";
             descripcionTextBox.Text = "";
-          
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var elim = BLL.PeliculasBLL.Buscar(Convert.ToInt32(nombresTextBox.Text));
+            if (elim != null)
+            {
+                BLL.PeliculasBLL.Eliminar(elim);
+                MessageBox.Show("Eliminado...");
+            }
+            else
+            {
+                MessageBox.Show("No se ha Elimimnado...");
+            }
+            textBox1.Text = "";
+            nombresTextBox.Text = "";
+            maskedTextBox1.Text = "";
+            categoriaTextBox.Text = "";
+            descripcionTextBox.Text = "";
         }
     }
 }
