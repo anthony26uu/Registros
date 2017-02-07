@@ -187,6 +187,36 @@ namespace Registros.UI.Consultar
 
           
         }
+
+        private void usuariosLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nombresLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nombresTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void claveLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void claveTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
     }
 

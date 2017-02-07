@@ -110,6 +110,7 @@
             this.claveTextBox.Name = "claveTextBox";
             this.claveTextBox.Size = new System.Drawing.Size(100, 20);
             this.claveTextBox.TabIndex = 10;
+            this.claveTextBox.TextChanged += new System.EventHandler(this.claveTextBox_TextChanged);
             // 
             // claveLabel
             // 
@@ -119,6 +120,7 @@
             this.claveLabel.Size = new System.Drawing.Size(36, 13);
             this.claveLabel.TabIndex = 9;
             this.claveLabel.Text = "clave:";
+            this.claveLabel.Click += new System.EventHandler(this.claveLabel_Click);
             // 
             // nombresTextBox
             // 
@@ -127,6 +129,7 @@
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(100, 20);
             this.nombresTextBox.TabIndex = 8;
+            this.nombresTextBox.TextChanged += new System.EventHandler(this.nombresTextBox_TextChanged);
             // 
             // nombresLabel
             // 
@@ -136,6 +139,7 @@
             this.nombresLabel.Size = new System.Drawing.Size(52, 13);
             this.nombresLabel.TabIndex = 7;
             this.nombresLabel.Text = "Nombres:";
+            this.nombresLabel.Click += new System.EventHandler(this.nombresLabel_Click);
             // 
             // usuariosLabel
             // 
@@ -145,6 +149,7 @@
             this.usuariosLabel.Size = new System.Drawing.Size(51, 13);
             this.usuariosLabel.TabIndex = 5;
             this.usuariosLabel.Text = "Usuarios:";
+            this.usuariosLabel.Click += new System.EventHandler(this.usuariosLabel_Click);
             // 
             // dataGridView1
             // 
@@ -216,6 +221,7 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 18;
             this.maskedTextBox1.ValidatingType = typeof(int);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // Consulta
             // 
