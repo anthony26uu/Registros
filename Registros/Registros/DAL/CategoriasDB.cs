@@ -14,5 +14,7 @@ namespace Registros.DAL
 
         }
       public  DbSet<Categorias> Categorias { get; set; }
+      public DbSet<Usuario> Usuario { get; set; }
+      public DbSet<Peliculas> Peliculas { get; set; }
     }
 }

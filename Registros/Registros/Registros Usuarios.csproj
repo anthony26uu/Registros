@@ -69,7 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CategoriaBLL.cs" />
+    <Compile Include="DAL\IRepository.cs" />
     <Compile Include="BLL\PeliculasBLL.cs" />
+    <Compile Include="DAL\Repositorio.cs" />
     <Compile Include="BLL\UsuariosBLL.cs" />
     <Compile Include="CategoriasDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

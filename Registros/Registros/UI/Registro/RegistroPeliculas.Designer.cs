@@ -46,6 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.categoriaTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             nombresLabel = new System.Windows.Forms.Label();
             estrenoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -53,6 +54,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.peliculasDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peliculasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombresLabel
+            // 
+            nombresLabel.AutoSize = true;
+            nombresLabel.Location = new System.Drawing.Point(30, 72);
+            nombresLabel.Name = "nombresLabel";
+            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.TabIndex = 36;
+            nombresLabel.Text = "Nombres:";
+            // 
+            // estrenoLabel
+            // 
+            estrenoLabel.AutoSize = true;
+            estrenoLabel.Location = new System.Drawing.Point(30, 134);
+            estrenoLabel.Name = "estrenoLabel";
+            estrenoLabel.Size = new System.Drawing.Size(46, 13);
+            estrenoLabel.TabIndex = 37;
+            estrenoLabel.Text = "Estreno:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(30, 160);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 38;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // categoriaLabel
+            // 
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new System.Drawing.Point(30, 239);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new System.Drawing.Size(55, 13);
+            categoriaLabel.TabIndex = 40;
+            categoriaLabel.Text = "Categoria:";
             // 
             // peliculasDBDataSet
             // 
@@ -102,7 +139,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(173, 287);
+            this.button2.Location = new System.Drawing.Point(127, 287);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 45;
@@ -130,40 +167,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(52, 288);
+            this.button3.Location = new System.Drawing.Point(33, 287);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 42;
             this.button3.Text = "Nuevo Registro";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // nombresLabel
-            // 
-            nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(30, 72);
-            nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(52, 13);
-            nombresLabel.TabIndex = 36;
-            nombresLabel.Text = "Nombres:";
-            // 
-            // estrenoLabel
-            // 
-            estrenoLabel.AutoSize = true;
-            estrenoLabel.Location = new System.Drawing.Point(30, 134);
-            estrenoLabel.Name = "estrenoLabel";
-            estrenoLabel.Size = new System.Drawing.Size(46, 13);
-            estrenoLabel.TabIndex = 37;
-            estrenoLabel.Text = "Estreno:";
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(30, 160);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 38;
-            descripcionLabel.Text = "Descripcion:";
             // 
             // descripcionTextBox
             // 
@@ -173,15 +183,6 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(100, 73);
             this.descripcionTextBox.TabIndex = 39;
             // 
-            // categoriaLabel
-            // 
-            categoriaLabel.AutoSize = true;
-            categoriaLabel.Location = new System.Drawing.Point(30, 239);
-            categoriaLabel.Name = "categoriaLabel";
-            categoriaLabel.Size = new System.Drawing.Size(55, 13);
-            categoriaLabel.TabIndex = 40;
-            categoriaLabel.Text = "Categoria:";
-            // 
             // categoriaTextBox
             // 
             this.categoriaTextBox.Location = new System.Drawing.Point(102, 236);
@@ -189,11 +190,22 @@
             this.categoriaTextBox.Size = new System.Drawing.Size(100, 20);
             this.categoriaTextBox.TabIndex = 41;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(220, 286);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Consulta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // RegistroPeliculas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 385);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox categoriaTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }

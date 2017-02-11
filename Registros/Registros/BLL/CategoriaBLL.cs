@@ -11,37 +11,36 @@ namespace Registros.BLL
 {
   public  class CategoriaBLL
     {
-        public static void Insertar (Categorias N)
+        public static bool Insertar (Categorias N)
         {
-            using (var Con= new CategoriasDB())
-                {
-                try
-                {
-                    Con.Categorias.Add(N);
-                    Con.SaveChanges();
-           
-                }catch(Exception )
-                {
-                    MessageBox.Show("Error...");
-                }
-            
+            bool retorno = false;
+            using (var repositorio = new Repositorio<Categorias>())
+            {
+                retorno = repositorio.Guardar(N) != null;
+
             }
+            return  retorno;
+
         }
 
-        public static void Eliminar(Categorias N)
+        public static bool Eliminar(Categorias N)
         {
-            using (var Con = new CategoriasDB())
+            var db = new CategoriasDB();
+            bool retorno =false;
+            using (var repositorio = new Repositorio<Categorias>())
             {
                 try
                 {
-                    Con.Entry(N).State = EntityState.Deleted;
-                    Con.SaveChanges();
+                    repositorio.Eliminar(N);
+                           
+                    
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error...");
+                  
                 }
+                return retorno;
 
             }
         }
@@ -50,11 +49,12 @@ namespace Registros.BLL
         {
             var b = new Entidades.Categorias();
 
-            using (var con = new CategoriasDB())
+            using (var repositorio = new Repositorio<Categorias>())
             {
                 try
                 {
-                    b = con.Categorias.Find(id);
+                    //repositorio.Buscar(id);
+
                 }
                 catch (Exception)
                 {

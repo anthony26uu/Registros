@@ -115,5 +115,11 @@ namespace Registros.UI.Registro
             descripcionTextBox.Text = "";
             categoriaTextBox.Text = "";
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            UI.Consultar.ConsultarCategorias consultar = new ConsultarCategorias();
+            consultar.Show();
+        }
     }
 }

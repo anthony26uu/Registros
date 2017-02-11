@@ -1,4 +1,5 @@
 ﻿
+using Registros.BLL;
 using Registros.DAL;
 using Registros.Entidades;
 using System;
@@ -115,6 +116,10 @@ namespace Registros.UI.Registro
         {
             var usuario = new Usuario();
 
+            var n = new CategoriaBLL();
+            
+            
+
             usuario.Nombres = usuariosTextBox.Text;
             usuario.clave = claveTextBox.Text;
             //  usuario.Usuarios = usuariosTextBox.Text;
@@ -139,21 +144,7 @@ namespace Registros.UI.Registro
             nombresTextBox.Text = "";
             claveTextBox.Text = "";
 
-            /*
-        
-            Usuario usuario = new Usuario();
-
-            usuario = crearusuario();
-
-            if (UsuarioBLL.Insertar(usuario))
-            {
-                MessageBox.Show("Registrado con exito");
-            }
-            else
-            {
-                MessageBox.Show("No se guardo");
-            }
-            */
+          
 
         }
 
@@ -186,6 +177,12 @@ namespace Registros.UI.Registro
                 MessageBox.Show("Estos son sus resultados.");
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UI.Consultar.Consulta consultar = new UI.Consultar.Consulta();
+            consultar.Show();
         }
     }
 }

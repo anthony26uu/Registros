@@ -86,5 +86,11 @@ namespace Registros.UI.Registro
             categoriaTextBox.Text = "";
             descripcionTextBox.Text = "";
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            UI.ConsultaPeliculas consulta = new ConsultaPeliculas();
+            consulta.Show();
+        }
     }
 }
